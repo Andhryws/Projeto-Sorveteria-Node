@@ -61,13 +61,14 @@
     </nav>
     </header>
     <section>
-       
-    <form action="/acai/{{acai.id}}/editar" method="post">
+    {{#with acai}}
+    <form action="/acai/{{id}}/editar" method="post">
     <h2>Editar</h2>
-        <input type="text" name="tamanho" placeholder="Insira um novo tamanho">
-        <input type="text" name="valor" placeholder="Insira um novo valor">
+        <input type="text" name="tamanho" placeholder="Insira um novo tamanho" value="{{tamanho}}">
+        <input type="text" name="valor" placeholder="Insira um novo valor" value="{{valor}}">
         <button type="submit" class="btn btn-success">Salvar</button>
     </form>
+    {{/with}}
     </section>
 </body>
 </html>

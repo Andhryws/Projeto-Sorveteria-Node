@@ -61,8 +61,10 @@
     </nav>
     </header>
     <section>
+        <a href="/sorvete/cadastrar">cadastar</a>
+        {{#if sorvetes.length}}
         <ul>
-            <a href="/sorvete/cadastrar">cadastar</a>
+            
         {{#each sorvetes}}
             <li>
                 <label>Sabor: {{sabor}}</label>
@@ -76,6 +78,9 @@
             </form>
         {{/each}}
         </ul>
+        {{else}}
+        <p>Não há sorvetes cadastrados</p>
+        {{/if}}
     </section>
 </body>
 </html>
