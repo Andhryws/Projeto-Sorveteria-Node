@@ -61,23 +61,16 @@
     </nav>
     </header>
     <section>
-        <ul>
-            <a href="/funcionario/cadastrar">cadastar</a>
-        {{#each funcionarios}}
-            <li>
-                <label>Nome: {{nome}}</label>
-                <label>Cpf: {{cpf}}</label>
-                <label>Cargo: {{cargo}}</label>
-                <label>Salario: {{salario}}</label>
-            </li>
-
-            <a href="/funcionario/{{id}}/editar">editar</a>
-
-            <form action="/funcionario/excluir/{{id}}" method="post">
-                <button type="submit" class="btn btn-danger" onclick="return confirm('Certeza?')" >Excluir</button>
-            </form>
-        {{/each}}
-        </ul>
+    {{#with funcionario}}
+    <form action="/funcionario/{{id}}/editar" method="post">
+    <h2>Editar</h2>
+        <input type="text" name="nome" placeholder="Insira um novo nome" value="{{nome}}">
+        <input type="text" name="cpf" placeholder="Insira um novo cpf" value="{{cpf}}">
+                <input type="text" name="cargo" placeholder="Insira um novo cargo" value="{{cargo}}">
+        <input type="text" name="salario" placeholder="Insira um novo salario" value="{{salario}}">
+        <button type="submit" class="btn btn-success">Salvar</button>
+    </form>
+    {{/with}}
     </section>
 </body>
 </html>

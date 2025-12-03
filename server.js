@@ -9,10 +9,12 @@ const Funcionario = require('./models/Funcionario.model')
 const Milkshake = require('./models/Milkshake.model')
 const Doces = require('./models/Doces.model')
 const app = express()
+const path = require('path');
 const port = 3000
 
 app.use(express.json())
 app.use(express.urlencoded({extended : true}))
+app.use(express.static(path.join(__dirname, 'public')));;
 
 app.engine('handlebars', exphbs.engine({defaultLayout : false}))
 app.set('view engine', 'handlebars')
